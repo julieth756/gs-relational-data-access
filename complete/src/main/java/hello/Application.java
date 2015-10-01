@@ -49,5 +49,6 @@ public class Application implements CommandLineRunner {
                 "SELECT id, first_name, last_name FROM customers WHERE first_name = ?", new Object[] { "Josh" },
                 (rs, rowNum) -> new Customer(rs.getLong("id"), rs.getString("first_name"), rs.getString("last_name"))
         ).forEach(customer -> log.info(customer.toString()));
+        
     }
 }
